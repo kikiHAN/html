@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>BOM与案例</title>
+	<style>
+		.d-wp {
+			position:relative;
+			line-height:30px;
+			text-align:center;
+			font-size: 14px;
+			color:#fff;
+			background-color:#0f0;
+			border-radius:3px;
+			margin-left:50px;
+
+		}
+
+		.pro {
+			position:absolute;
+			width:0;
+			height:100%;
+			background-color:red;
+			border-radius:3px;
+			opacity :0.3;
+			 filter:alpha(opacity=30);/*IE678不兼容*/
+		}
+
+		.form-wp {
+			margin :20px;
+		}
+
+		.form-li {
+			display:inline-block;
+		}
+		/*爱好*/
+		.more{
+			margin :20px 0px 0px 100px;
+		}
+
+		#morwp {
+			margin :20px 0px 0px 80px;
+		}
+		/*p继承父字体*/
+		.p {
+			font-size: 12px;
+		}
+
+		.mydiv{
+			font-size: 24px;
+		}
+
+		.liwp {
+			width :300px;
+		}
+
+
+		.title {
+			width:300px;
+			height: 100px;
+			text-align:center;
+			line-height: 100px;
+			border:1px solid pink;
+			margin-bottom:20px;
+		}
+
+		.btns {
+			margin:10px 0px 30px 0px;
+			text-align:center;
+
+		}
+
+	</style>
+</head>
+<body>
+	<a href="#123" target= "_self">baidu</a>
+	<!-- <button id = "btn">按钮</button> -->
+	<!-- <a id= "A">BAI</a> -->
+	<!-- 下拉菜单 -->
+	<!-- <select name="" id="sel">
+		<a href="http://www.baidu.com" target="_self"></a>
+		<option value="">请选择</option>
+	</select> -->
+
+	<hr>
+	<!-- 进度条 -->
+
+
+	<div id="div" >
+		<p class="p">
+			2323
+		</p>
+	</div>
+
+	<div id= "prorgess" class="d-wp">
+		<div class="pro"></div>
+		加载中.....
+	</div>
+	<!--爱好添加 -->
+
+	
+	<!-- <div class="form-wp">
+		<label for="">个人爱好:	<input type="text"></label>
+		<button>增加</button>
+	</div>
+		<div class="">
+			<button>增加</button>
+			
+		</div> -->
+
+		<!-- <hr> -->
+
+	<!-- 数组生成下拉菜单 -->
+			
+	<!-- <select name="" id="liwp">
+		<option value="0">请选择</option>
+	</select>
+	<button id = "btn">生成</button> -->
+	
+	<!-- 爱好 -->
+	<div class="wp">
+		<div class="form-wp">
+			<span class="">个人爱好:</span>
+			<div class="form-li">
+				<input id ="Inp" type="text">
+				<button id ="addB">增加</button>
+				
+			</div>	
+			<div id="morwp" class="more">
+				<!-- <input id ="Inp" type="text">
+				<button id ="addB">增加</button> -->
+				
+			</div>
+		</div>
+		<div id="tru" class="more">
+			<button  id ="true">确定</button>
+		</div>
+		<div id="result" class="more">
+
+		</div>
+
+	</div>
+
+	<!-- 随机选择 -->
+
+	<div class="liwp">
+		<div id="strTitl" class="title">
+			故宫
+		</div>
+		<div class="btns">
+			<button id="startBtn">开始</button>
+			<button id="stopBtn">停止</button>
+		</div>
+		<div class="addwp">
+			<input type="text">
+			<button id="AddBtn">增加</button>
+		</div>
+	</div>
+		
+		<table  id="tab">
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>2</td>
+			</tr>
+		</table>
+
+	 <script src="js/bom.js"></script>
+	<script>
+	//随机选择
+
+		var tab =document.getElementById('tab');
+
+		tab.onclick=function(even){
+
+			console.log(arguments);
+        };
+
+
+		// var strTitl= document.getElementById('strTitl');
+		// var startBtn=document.getElementById('startBtn');
+		// var stopBtn=document.getElementById('stopBtn');
+		// var AddBtn=document.getElementById('AddBtn');
+
+		// var Arr = "故宫 长城 十三陵 十渡 圆明园 颐和园".split(' '),
+		// 	len=Arr.length, index,timer;
+
+
+		// 	startBtn.onclick=function(){
+
+		// 		if(timer){
+		// 			return;
+		// 		};
+
+		// 		timer=setInterval(function(){
+
+		// 			index=Math.floor(Math.random()*len);
+		// 			strTitl.innerHTML=Arr[index];
+
+
+		// 		},200);
+		// 	};
+
+		// 	stopBtn.onclick=function(){
+		// 		clearInterval(timer);
+
+		// 		timer=null;
+		// 	};
+
+		// 	AddBtn.onclick=function(){
+		// 		var Input=this.parentNode.getElementsByTagName('input')[0];
+		// 		var vale,NewArr,i,len;
+
+
+		// 		vale=Input.value;
+
+		// 		if(vale==''){
+		// 			alert('不能为空');
+		// 			return;
+		// 		};
+
+		// 		 if (vale.charAt(0) == '|' || vale.charAt(vale.length - 1) == '|') {
+	 //                alert('不能以 “|” 结尾或开头');
+	 //                return;
+  //           	}
+
+		// 		// if(vale.charAt(0) =='|' || vale.charAt(vale.length-1) == '|'){
+		// 		// 	alert('不能以 “|” 结尾或开头');
+		// 		// 	return;
+		// 		// };
+
+
+		// 		NewArr=vale.split('|');
+		// 		len=NewArr.length;
+
+		// 			for(i=0;i<len;i++){
+
+		// 				if(inArr(NewArr[i],Arr)){
+		// 					alert(NewArr[i]+'已存在');
+		// 				} else {
+		// 					Arr.push(NewArr[i]);
+		// 				}
+
+		// 			};
+
+		// 			Input.value='';
+
+		// 			stopBtn.click();
+		// 			console.log(Arr);
+
+
+		// 	};
+
+		// 	function inArr(itme,arr){
+		// 		var i, len=arr.length;
+		// 		for(i=0;i<len;i++){
+		// 			if(arr[i]==itme){
+		// 				return true;
+		// 			}
+		// 		}
+		// 		return false;
+		// 	};
+
+
+
+
+
+
+	///////////////////////////////////////////////////////////////////
+		//动态生成个人爱好???????
+
+			// var addB= document.getElementById('addB');
+			// var turbt= document.getElementById('true');
+			// var morfor= document.getElementById('morwp');
+			// var inpt= document.getElementById('Inp');
+			// var result= document.getElementById('result');
+
+			// 	turbt.onclick=function(){
+			// 		var inpts= morfor.getElementsByTagName('input'),
+			// 			Arr=[],
+			// 			i,
+			// 			len=inpts.length;
+			// 		for(i=0;i<len;i++){
+			// 			Arr.push(inpts[i].value);
+			// 		};
+
+			// 		Arr.unshift(inpt.value);
+			// 		result.innerHTML='你的爱好有:'+Arr.join(';');
+			// 	};
+
+
+			// 	addB.onclick=function(){
+			// 		var newEle=getMorELe(),
+			// 			len = getToCount();
+
+			// 			morfor.appendChild(newEle);
+
+			// 			if(len>=3){
+			// 				addB.disabled = 'disabled';
+			// 			}
+
+			// 	};
+
+			// 	function getMorELe(){
+			// 		var p= document.createElement('p'),
+			// 			input = document.createElement('input'),
+			// 			button = document.createElement('button'),
+			// 			deTxt = document.createTextNode('删除'),
+			// 			nbsp = document.createTextNode(' ');
+
+			// 			input.type = 'text';
+
+			// 			button.appendChild(deTxt);
+			// 			button.oncclick=onDelBtn;
+
+			// 			p.appendChild(input);
+			// 			p.appendChild(nbsp);
+			// 			p.appendChild(button);
+
+
+			// 			return p;
+
+
+			// 	}
+
+
+			// 	function getToCount(){
+			// 		return morfor.getElementsByTagName('p').length;
+			// 	}
+
+			// 	function onDelBtn(){
+			// 		morfor.removeChild(this.parentNode);
+			// 		addB.disable='';
+
+			// 	}
+
+
+
+		////////////////////////////////////////////////////////////////
+		//根据数组生成下拉菜单???????
+
+	// function  New(){
+	// 	var arr =[
+	// 		{"id":1, "name":"故宫"},
+	// 		{"id":2, "name":"长城"},
+	// 		{"id":3, "name":"十三陵"},
+	// 		{"id":4, "name":"圆明园"},
+	// 		{"id":5, "name":"香山"},
+	// 		{"id":6, "name":"玉渊潭"},
+	// 	];
+
+	// 	var  sel=document.getElementById('liwp');
+	// 	var  Sbtn= document.getElementById('btn');
+	// 		Sbtn.onclick=function(){
+	// 			var neArr =['<option value="0">请选择</option>'],
+	// 				i,len= arr.length;
+	// 			for(i= 0; i<len; i++){
+	// 				neArr.push('<option value="',arr[i].id,'">',arr[i].name,'</option>');
+
+	// 			}
+
+	// 				sel.innerHTML=neArr.join('');
+	// 		};
+
+	// 	};
+
+	// 	New();
+
+		//////////////////////////////////////////////////////////////
+
+		//数组去重
+
+
+		// var array1 = [1,2,3,'2',4,'3',6,'a','7',8,undefined,null,false];
+
+		// 	function  unOn(arr){
+		// 		var newObj = {}, i, len = arr.length;
+
+		// 		for(i=0;i<len; i++){
+		// 			if(typeof arr[i]=='string'){
+
+		// 				newObj[arr[i]]=arr[i];///利用对象中名不能重复
+						
+		// 			}else if(typeof arr[i]=='number'){
+		// 				newObj[arr[i]]=arr[i];
+		// 			}
+		// 		}
+
+		// 		arr.length = 0;
+
+		// 		for(var key in newObj){
+		// 			arr.push(newObj[key]);
+		// 		}
+
+		// 		return  arr;
+		// 	}
+
+		// 		console.log(unOn(array1));
+
+		 	//1)
+			//var array1 = [1,2,3,'2',4,'3',6,'a','7',8}
+			// function  unOn(arr){
+			// 	var newObj = {}, i, len = arr.length;
+
+			// 	for(i=0;i<len; i++){
+			// 		newObj[arr[i]]=arr[i];
+			// 	}
+
+			// 	arr.length = 0;
+
+			// 	for(var key in newObj){
+			// 		arr.push(newObj[key]);
+			// 	}
+
+			// 	return  arr;
+			// }
+
+			// 	console.log(unOn(array1));
+
+			//2)?????????//
+			// function unOn(arr){
+			// 	var newArray=[], i, len=arr.length;
+			// 	for(i=0; i<len; i++){
+			// 		if(!inArray(newArray,arr[i])){
+			// 			newArray.push(arr[i]);
+			// 		}
+
+			// 	}
+			// 		return newArray;
+			// }
+			// 	//unOn();
+			// 	//var array1 = [1,2,3,'2',4,'3',6,'a','7',8];
+			// 	function inArray(arr,itme){
+			// 		var i, len=arr.length;
+			// 		for(i=0;i<len;i++){
+			// 			if(arr[i]===itme){
+			// 				return true;
+			// 			}
+			// 		}
+			// 			return false;
+			// 	}
+					//console.log(inArray(array1,5));
+
+			// function inArray(arr,itme){
+			// 	var i, len=arr.length;
+			// 	for(i = 0; i < len; i ++){
+			// 		if(arr[i]===itme){
+			// 			return true;
+			// 		}
+			// 	}
+			// 	return false;
+			// };
+
+			//inArray();
+				//var newarr = unOn(array1); 
+				//console.log(unOn(array1));
+				//console.log(newarr);
+
+
+	// 判断返回参数的数据类型
+	// 		var test = function(obj) {
+
+	// 			if(typeof obj == 'number'){
+	// 				//typeof  返回的数据类型有'string','number','boolean','undefined','function','object;能区分基本类型,不能区分函数和对象;
+	// 				//instanceof:是一个实例，判断函数和数组；
+	// 				return 'number';
+	// 					if(obj instanceof Array){
+	// 						return 'Array';
+	// 					}
+
+	// 					//return 'object';
+	// 			}
+	// 			return obj;
+	// 		}
+	// 			var arr = {};
+	// 		console.log(test(arr));
+
+
+	// 带进度条按钮
+
+	// 	function getPro(){
+
+			// var div1 = document.getElementsByClassName('d-wp'),
+			// 	div2 = document.getElementsByClassName('pro'),
+			// 	//div2 = div.getElementsByTagName('div')[0],
+			// 	tim = 0;
+
+			// 	div1[0].onclick = function(){
+
+			// 		var times = setInterval(function(){
+
+			// 			tim++;
+
+			// 			div2[0].style.width=tim*5+'%';
+			// 				//+有连接字符串作用
+
+			// 			if(tim==21){
+			// 				div1[0].innerHTML = '完成';
+			// 				div1[0].style.backgroundColor = '#73bf00';
+			// 				clearInterval(times);
+			// 			};
+					
+			// 		},500);
+
+					
+			// 	};
+					
+				//老师代码
+		// var progressBtn = document.getElementById('prorgess'),
+		// 	inner = progressBtn.getElementsByTagName('div')[0],
+		// 	counter = 0,
+		// 	timer;
+		// 	progressBtn.onclick = function() {
+		// 		timer = setInterval(function() {
+		// 			counter++;
+		// 			inner.style.width = counter * 10 + '%';
+		// 			if (counter == 10) {
+		// 				clearInterval(timer);
+		// 			}
+		// 		}, 1000);
+		// 	};
+
+
+		//}
+	
+
+
+		//闪烁标题
+		//1
+		// var tits = function(){
+		// 	var tit = document.title;
+		// 		//document.title= 'test';
+
+		// 	setInterval(function(){
+
+		// 		if(document.title=='test'){//比较值相等
+		// 			document.title=tit;
+		// 		}else{
+		// 			document.title='test';
+		// 	} 
+
+		// 	},500);
+		// }
+		// tits();
+
+			// 2(不太好)
+
+				// var tits = function(){
+				// 	var tit = document.title;
+				// 	var i = 0;
+				// 	setInterval(function(){
+				// 		if(i%2==0){
+				// 			document.title='test';
+				// 		} else {
+				// 			document.title=tit;
+				// 		}
+				// 		i++;
+				// 	},500)
+
+				// };
+				// tits();
+
+			//3
+				//var tit = document.title;
+				 // function tits() {
+				 // 	var i=true;
+					// setInterval(function(){
+					// 	if(i){
+
+					// 	document.title= '案例';
+					// 	} else{
+					// 		document.title= tit;
+					// 	}
+					// 	i=!i;
+					// },500)
+
+				 // }
+				 // tits();
+				 // console.log(title)
+
+		//数组排序
+				//var arr = [12,0,4,3,43,1,37,5];
+				//console.log(arr.sort());
+
+				//var con = function(x,y){
+					//return y-x;
+				//}
+				// arr.sort(con);
+				 //console.log(arr);
+
+						/*arr.sort(function (x,y){
+						 	return x-y;
+						} );*/
+				// arr.sort(con);
+				 //console.log(arr);
+
+		//遍历数组
+		    //var arr = ['北京','天津','上海','杭州','南京',];
+			    // for(var i= 0; i<arr.length;i++){
+			    // 	console.log(i);
+			    // 	console.log(arr[i]);
+			    // }
+
+			    // for(var i in arr){
+			    // 	console.log(arr[i]);
+			    // }
+
+		//向上，下取整，四舍五入，随机；
+		
+				// var arr =123.344;
+				// console.log(Math.ceil(arr));
+				// console.log(Math.floor(arr));
+				// console.log(Math.round(arr));
+
+			// function ar(){
+			// 	var ter = '北京,天津,上海,杭州,南京';
+			// 	var arr = ter.split(',');
+			// 	var mth = Math.floor(Math.random() * arr.length);
+			// 	return arr[mth];
+			// };
+			//  console.log(ar());
+	
+
+		//数组字符串转换
+			// var x = 'a b c d e f';
+			// var arr =['a','b','c','d','e',];
+			// console.log(arr.join('_'));
+			// console.log(x.split(' '))
+
+			//下拉菜单
+			// var arr = ['北京','天津','上海','杭州','南京',];
+			// document.getElementById('sel').innerHTML += '<option>' + arr.join('</option><option>') + '</option>'
+			//2)
+			// var arr = ['a','b','c','d'];
+			// 	var div = document.getElementById('sel');
+			// 	div.innerHTML +='<option>' + arr.join('</option>'+'<option>') + '</option>';
+
+
+
+		//判断字母开头
+			// var ar = function(star,non){
+			// 	return star.indexOf(non)==0?true:false;
+			// }
+
+			// var w = 'text';
+			// console.log(ar(w,'t'));
+
+			//var x = 'abcdefg';
+			//console.log(x.charAt(0)=='a'?true:false)
+			//console.log(x.indexOf('a'));
+
+
+		// function winHeight(){
+		// 	return window.innerHeight||document.documentElement.clientHeight
+		// }
+		// 	alert(winHeight());
+		// document.body.clientHeight;
+		// var tit = document.title
+		// console.log(tit);
+
+
+		//var btn = document.getElementById('btn');
+			//btn.onclick = function(){
+				//window.open('http://wwww.baidu.com');
+				//window.location.href = "htttp://www.baidu.com";
+				//location.replace("http://www.baidu.com");
+				//location.reload()//刷新
+				
+			//}
+			//confirm('btn')
+			//alert(btn);
+			//prompt(btn);
+
+
+			//  function test(){
+			// 	console.log('test....');
+		 // }
+			// // //test();
+			// // setTimeout(test,2000);
+			// var tim = setTimeout(test,2000);
+			// 	clearTimeout(tim);
+
+			// setTimeout(function(){
+			// 	console.log('test.....')
+			// },2000)
+
+			//setInterval(function(){
+				//console.log('test.....')
+			//},2000)
+
+	</script>
+
+	
+</body>
+</html>

@@ -1,0 +1,140 @@
+/**
+* 搜狗页面样式
+＊／
+
+／＊ css reset */
+
+*{
+	margin:0;
+	padding: 0
+}
+body {
+	font-size: 12px;
+	background-image: url(../img/aoyunhui2.jpg);
+}
+
+ul,li {
+		list-style: none;	
+}
+
+.top-nav {
+		
+		height :45px;
+		background-image: url(../img/bg_white.png);
+
+}
+.text-top {
+	
+	/* background-color: red; */
+
+	float:left;
+	
+}
+
+/* .top-lef {
+	width: 480px;
+	height: 26px;
+}
+ */
+.text-top li {
+		float:left;
+		margin-left: 20px;
+		font-size: 14px;
+		font-family:'arial';
+		/* font-weight: bold; */
+		text-decoration: none;
+	    height :45px;
+	    line-height: 45px;
+	    color:#fff;
+
+}
+/* .clear {
+ 	clear:both;
+ } */ 
+
+.text-top li  a {
+	text-decoration: none;
+	height :45px;
+	line-height: 45px;
+	color:#fff;
+	
+}
+
+.text-web {
+	display: block;
+	color:#fff;
+	font-size: 13px;
+	font-family:'arial';
+	font-weight: bold;
+	height :35px;
+	line-height: 45px;
+	border-bottom: 2px solid #BDBDBD; 
+}
+
+.text-r-btn {
+	width: 309px;
+	height: 24px;
+	float:left;
+
+}
+
+.text-right li {
+		float:left;
+		height :45px;
+		line-height: 45px;
+		display: block;
+		color:#fff;
+		font-size: 11px;
+	
+}
+ /* .text-right {
+ 	position: absolute;
+ 	right :20px;
+ 	left:235px;
+ 	display: block; */
+	 	
+} 
+
+.text-right li a  {
+	text-decoration: none;
+	color:#fff;
+	font-size: 11px;
+} */
+ 
+/* .weather {
+	display: block;
+	width :60px;
+	height: 14px;
+	line-height: 14px;
+	border-right: 1px solid  #fff;
+} */
+
+/* .text-r-btn li .lan  {
+	 height: 44px;
+
+} */
+/* .land {
+	display: block;
+	background-color: #fd6853;
+	border-radius: 4px;
+	width: 60px;
+	height: 25px;
+	padding: 0 18px;
+	border: 0;
+	color:#fff;
+	font-size: 11px;
+}
+
+.land:hover {
+	color:#EE6AA7;
+} */
+
+/* .text-right li.tex a {
+	color: #919191;
+} */
+
+.logo {
+	width: 300px;
+	height:160px;
+	margin: 85px auto 0;
+}

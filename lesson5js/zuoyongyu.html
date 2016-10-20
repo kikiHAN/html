@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数作用域</title>
+</head>
+<body>
+
+		<h1 id="outerH1">outer</h1>
+		<iframe id="frame1" src="iframe_inner.html" frameborder="1"></iframe>
+
+		<button id="setH1Btn">set inner H1</button>
+
+		<div id="div1"></div>
+
+
+		<script src="js/helper.js"></script>
+<script>
+
+	///////////////////////////////////////////////////
+	//子页面父页面操作
+
+
+
+	//dom对象方法
+	// var help={};
+
+	// help.dom=function(id){
+	// 	if (typeof id == 'string'){
+	// 	return document.getElementById(id);
+			
+	// 	}else {
+	// 		return id;
+			
+	// 	}
+	// }
+	// //dom();
+	// var inner = help.dom('setH1Btn');
+	// console.log(inner);
+
+
+
+++_
+// 		var setH1Btn = Helper.dom('setH1Btn');
+// 		var outerH1 = Helper.dom('outerH1');
+// 		var frame1 = Helper.dom('frame1');
+// //		var innerH1 = Helper.dom('innerH1'); // ?????
+// 		setH1Btn.onclick = function() {
+// 			var cWindow = frame1.contentWindow;
+// 			var cDocument = cWindow.document;
+// 			var innerH1 = cDocument.getElementById('innerH1');
+// 			innerH1.innerHTML = "888";
+// 			cWindow.inner();
+// //			console.log(frame1.contentWindow.document);
+// 		};
+// 		function ptest() {
+// 			alert('form outer...');
+// 		}
+
+
+	//////////////////////////////////////////////////////
+
+	 // function fn(a) {
+  //           console.log(a);//function a (){}
+  //           var a = 2;
+  //          function a() {};
+  //          var a = function() {};//function a(){}
+  //           console.log(a);//2
+  //       }
+  //       fn();
+  //     // a();//not defined
+
+	
+      //  function fn(a) {
+      //       console.log(a);//1
+      //       var a = 2;
+          
+      //       // var a = function() {};
+      //       console.log(a);//2
+      //   }
+      //   fn(1);
+      // // a();
+
+
+
+	//判断函数输出值
+		//1)
+		// var f = function(){
+		// 	var a=b=1;
+		// };
+		//console.log(a); //not defined
+		//console.log(b);//not defined
+		
+
+		//2)
+		// var f= function(){
+		
+		// 	var a=b=1;
+
+		// }
+		// f();
+		// 	console.log(a);//a not defined(若先con(a)在上报错则下面不执行)
+		// 	//a为局部作用域内变量，局部作用域中变量出局部就不可用所以值为
+		// 	//a is not defined
+		// 	console.log(b);//1(若先con(b)则得结果1,在下不执行)
+		// 			//b结果为1，则是把b作为全局作用域内变量，给赋值为1，
+
+		//3)
+		// var f= function(){
+		// 	var a=b,
+		// 	    b=1;
+
+		// }
+		// f();
+		// 	console.log(b);//b not defined
+		// 	console.log(a);//a not defined
+				
+		// var f= function(){
+		// 	b=1;
+		// 	var a=b;
+
+		// }
+		// f();
+		// 	console.log(b);//值为1
+		// 	console.log(a);//a not defined
+
+
+		// var f= function(){
+		// 	b;//这一句就不对或者b是函数上的，但没给值所以bdefined
+		// 	var a=b;
+
+		// }
+		// f();
+		// 	//console.log(b);//b is not defined
+		// 	console.log(a);//b不对这句不执行
+
+			//5)
+		// var f= function(){
+		// 	//b;
+		// 	var a=b=1;
+
+		// 	console.log(b);//1
+		// }
+		// f();
+		// 	console.log(a);//a not defined
+
+		//6）
+		// var f= function(){
+		// 	//b;
+		// 	var a=b;
+
+		// 	//console.log(b);//not defined
+		// }
+		// f();
+		// 	console.log(a);//b is not defined
+
+
+	</script>
+</body>
+</html>

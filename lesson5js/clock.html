@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>电子时钟</title>
+	<style>
+		#clock {
+			display :inline-block;
+			width:150px;
+			line-height:40px;
+			font-size :30px;
+			border :1px solid pink;
+			border-radius: 5px;
+			background-color:#ccc;
+			text-align:center;
+		}
+	</style>
+</head>
+<body>
+	
+	<span id="clock">00:00:00</span>
+	
+	<script src = "js/helper.js"></script>
+	<script>
+
+		//var tim = new Date;
+		//var arr = helper.inGetD(tim);
+		//console.log(arr);
+		// 	h = tim.getHours(),
+		// 	m = tim.getMinutes(),
+		// 	s = tim.getSeconds(),
+		// 	cloc = document.getElementById('clock');
+		// 	cloc.innerHTML= fill0(h) + ':' + fill0(m) + ':' + fill0(s);
+
+			// 	//电子时钟
+			// function tims(){
+			// 	var tim = new Date,h,m,s,cloc,ss;
+			// 		h = tim.getHours();
+			// 		m = tim.getMinutes();
+			// 		//s = tim.getSeconds();
+			// 		ss =tim.getSeconds(tim.setSeconds(tim.getSeconds()));
+			// 		cloc = document.getElementById('clock');
+			// 		//++s;
+			// 		cloc.innerHTML= fill0(h) + ':' + fill0(m) + ':' + fill0(ss);
+
+			// 		++ss;
+					
+			// 	setInterval(tims,1000)
+			// };
+
+			//  tims();
+
+			// function fill0(num){
+			// 	return num<10?'0'+ num :num;
+			// }
+
+		//console.log(tims());
+
+
+	 //老师代码
+	 
+	 // var initClock = function() {
+		// 	var d = new Date(),
+		// 		h, m, s = d.getSeconds(),
+		// 		clock = document.getElementById('clock');
+		// 	var timer = function() {
+		// 		h = d.getHours();
+		// 		m = d.getMinutes();
+		// 		s = d.getSeconds();
+		// 		clock.innerHTML = fill0(h) + ":" + fill0(m) + ":" + fill0(s);
+		// 		d.setSeconds(++s);
+		// 	};
+		// 	timer();
+		// 	setInterval(timer, 1000);
+		// };
+		// var fill0 = function(num) {
+		// 	return num < 10 ? '0' + num : num;
+		// };
+		// initClock();
+
+		//arguments参数(this)
+
+		// function test(x,y,z){
+
+		// 	console.log(arguments);[1,2,3,4]
+		// }
+		// test(1,2,3,4);
+
+
+		// function test(x,y,z){
+		// 		x=2;
+		// 	console.log(arguments);//[1,2,3,4]
+		// }
+		// test(1,2,3,4);
+
+
+		// var point ={
+		// 	x :0,
+		// 	moveTo:function(x){
+		// 		var moveX= function(x){
+		// 			this.x = x;
+		// 			//console.log(this);
+		// 		}
+		// 		moveX(x);
+		// 	console.log(this.moveX());
+		// 	}
+		// }
+		// 	point.moveTo(20);
+
+		//判断输出值
+		//1)
+		// var f = function(){
+		// 	var a=b=1;
+		// };
+		//console.log(a); //not defined  
+		//console.log(b);//not defined
+		
+
+		//2)
+		// var f= function(){
+		
+		// 	var a=b=1;
+
+		// }
+		// f();
+		// 	console.log(a);//a not defined(若先con(a)在上报错则下面不执行)
+		// 	//a为局部作用域内变量，局部作用域中变量出局部就不可用所以值为
+		// 	//a is not defined
+		// 	console.log(b);//1(若先con(b)则得结果1,在下不执行)
+		// 			//b结果为1，则是把b作为全局作用域内变量，给赋值为1，
+
+		//3)
+		// var f= function(){
+		// 	var a=b,
+		// 	    b=1;
+
+		// }
+		// f();
+		// 	console.log(b);//b not defined
+		// 	console.log(a);//a not defined
+
+		// var f= function(){
+		// 	b=1;
+		// 	var a=b;
+
+		// }
+		// f();
+		// 	console.log(b);//值为1
+		// 	console.log(a);//a not defined
+
+
+		// var f= function(){
+		// 	b;//这一句就不对或者b是函数上的，但没给值所以bdefined
+		// 	var a=b;
+
+		// }
+		// f();
+		// 	//console.log(b);//b is not defined
+		// 	console.log(a);//b不对这句不执行
+
+			//5)
+		// var f= function(){
+		// 	//b;
+		// 	var a=b=1;
+
+		// 	console.log(b);//1
+		// }
+		// f();
+		// 	console.log(a);//a not defined
+
+		//6）
+		// var f= function(){
+		// 	//b;
+		// 	var a=b;
+
+		// 	//console.log(b);//not defined
+		// }
+		// f();
+		// 	console.log(a);//b is not defined
+
+
+	</script>
+</body>
+</html>

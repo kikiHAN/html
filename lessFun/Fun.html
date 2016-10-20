@@ -1,0 +1,545 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>面向对象</title>
+</head>
+<body>
+
+
+
+    <script>
+
+
+// 面向对象思想：封装，多态，继承，抽象
+
+//     面向对象封装
+    
+//     1，对象原始模式
+
+//     var Dog = {
+//         name :'',
+//         color :''
+//     };
+
+//     根据上面结构可生成下面实例对象
+//      var dog1 = {
+//         name :'dodo',
+//         color :'black'
+//     };
+//         console.log(dog1)
+//      var dog2 = {};
+//         dog2.name = 'dodo';
+//         dog2.color = 'black';
+   
+// 缺点：若多写几个实例，就非常麻烦；
+// 实例与原型间看不到有什么联系
+
+// 2，原始模式改进
+    
+//     //通过写一个函数，解决代码重复问题
+//     function Dog( name,color ) {
+//         var obj = {
+//             name :name,
+//             color :color
+//         };
+//         return obj;
+//     }
+//         //调用函数，生成实例对象
+        
+//     var dog3 = Dog('dodo','black');
+//     var dog4 = Dog('tudou','white');
+
+//     问题:两个实例对像之间没有内在联系，不能反映出他们是一个原型对象的实例
+    
+    
+// 3，构造函数模式
+
+//     js提供构造函数（construction）模式，为解决从原型对象（类）生成实例对象的为题
+    
+//     构造函数就是一个函数，但内部使用this变量，对构造函数使用new操作符，生成实例，this变量会绑定到实例对象上。
+    
+    
+//     function Dog( name , color ) {
+//         this.name = name;  //函数中this指向window,但是new操作符调用的构造函数用，this指向实例对象
+//         this.color = color;
+//     }
+    
+//     var dog5 = new Dog( 'dodo','yellow');
+//        console.log(dog5)//
+//      结果:// Dog {name: "dodo", color: "yellow"}
+//             color:"yellow"
+//             name:"dodo"
+//             __proto__:Object
+            
+//         js提供instanceof，验证原型对象与实例对象之间关系
+//             dog5 instanceof Dog 返回true
+    
+//     生成的实例会自动含有一个constructor属相，指向构造函数；
+//         dog5.constructor 返回：
+//          function Dog( name , color ) {
+//             this.name = name; 
+//             this.color = color;
+//         }
+//         优点 解决代码重复问题，使用this 不用返回值
+       
+// 4，构造函数模式问题 
+
+//    构造函数存在内存浪费问题
+   
+//         function Dog ( name, color ){
+//             this.name = name;
+//             this.color = color;
+//             this.type = 'animal';
+//             this.run = function (){
+//                 return (this.name + ' is running...');
+//             };
+//         }  
+
+//         var dog6 = new Dog('dodo','white');
+//         var dog7 = new Dog('tudou','yellow');
+
+//         此时dog6.run == dog7.run返回false
+
+
+//         每个实例对象的type和run方法都一样，每次生成一个实例都生成重复的内容，多占一分内存
+        
+
+// 5,prototype(原型)模式
+
+//     js中 每个构造函数都有prototype属性，把prototype属性指向一个对象，这个对象的属性和方法都会被构造函数继承,可以把不变的属相和方法直接定义在prototype上
+
+//     function Dog (name, color ){
+//         this.name = name;
+//         this.color = color;
+//     }
+
+//     Dog.prototype =  {
+//         type : 'animal',
+//         run :function(){
+//            console.log( this.name + ' is running..');
+//         }
+//     };
+
+//     var dog6 = new Dog ('dodo','gray');
+//     var dog7 = new Dog ('dodo','gray');
+
+//         consoloe.log(dog7)返回 dog7中run，type继承得来
+//             Dog {name: "dodo", color: "gray"}
+//             color: "gray"
+//             name: "dodo"
+//             __proto__: Object//原型链（类作用域）
+//                 run: function()
+//                 type: "animal"
+//             __proto__: Object
+
+//             此时dog6.run==dog7.run 返回true
+
+
+// 6,prototype模式验证方法
+    
+//     isPrototypeOf()用来判断某个prototype对象和实例之间关系
+
+//             Dog.prototype.isPrototypeOf(dog6) //返回true
+//              Dog是dog6的原型对象
+//              
+//     hasOwnPrototype(),
+//     例对象默认包含的方法，用来判断某个属性是实例本身的属性还是从 prototype 继承来的
+//             dog6.hasOwnProperty('name')返回true，自己本身
+//             dog6.hasOwnProperty('type')返回false，继承得来
+
+//     in  用来判断某个实例是否含有某个属性，不管是不是本身属性。
+//      "name" in dog6 返回 true
+//     运算符还可以用来遍历某个对象的所有属性       
+//         for (var prop in dog6) {
+//             console.log(dog6[prop]);
+//         }
+//         //返回dodo
+//             gray
+//             animal
+//             function (){
+//             console.log( this.name + ' is running..');
+//         }
+
+
+// 面向对象继承(实现方法重用)
+// ////////////////////////////////////
+// 构造函数继承
+
+// js不是一个真正的面向对象的语言，但通过js的一些“特殊能力”，也可以实现js对象间的继承
+
+// 1，通过prototype(原型)，让“狗”的prototype指向Animal的实例，所有“狗”的实例就立刻拥有Animal的属性和方法了
+
+//     function Animal(){
+//         this.color = undefined;
+//         this.type = 'animal';
+//         this.eat = function(){
+//             console.log('eating..');
+//         };
+//     }
+
+//      function Dog (name){//个性化放在构造函数中
+//         this.name = name;
+//         this.kanm = function (){
+//             console.log(this.name + '在看门');
+//         };   
+//     }
+
+//     function Cat (name){
+//         this.name = name;
+//         this.eatF = function (){
+//             console.log (this.name + 'eating fish...');
+//         };
+//     }
+//     Dog.prototype = new Animal();
+//     Dog.prototype.constructor = Dog;
+//     var dog1 = new Dog( 'dodo');
+//     var cat1 = new Cat( 'mimi');
+
+//     把Dog的prototype对象指向一个Animal的实例，删除prototype原来的值，赋一个新的值
+//     但此时dog1.constructor会指向Animal
+//     加Dog.prototype.constructor = Dog;
+//  任何一个prototype对象都有一个constructor属性指向它的构造函数，
+//     加上这句Dog.prototype.constructor = Dog会指向Dog；
+//    要求：必须遵守这一的做法，避免导致继承混乱。
+
+// 2，直接继承prototype,在Animal对象中，不变的属性都可以直接写入Animal.prototype 我们可以尝试让Dog对象跳过Animal对象，直接继承Animal.prototype.
+
+//     function Animal(){
+//         this.color = undefined;
+        
+//     }
+
+//     Animal.prototype = {
+//         type : 'animal',
+//         eat :function(){
+//             console.log('eating..');
+//         }
+//     }
+
+//      function Dog (name){
+//         this.name = name;
+//         this.kanm = function (){
+//             console.log(this.name + '在看门');
+//         };   
+//     }
+
+//     function Cat (name){
+//         this.name = name;
+//         this.eatF = function (){
+//             console.log (this.name + 'eating fish...');
+//         };
+//     }
+
+//     Dog.prototype = Animal.prototype;
+//     Dog.prototype.constructor = Dog;
+//     var dog2 = new Dog( 'dodo');
+//     var cat2 = new Cat( 'mimi');
+
+//     但无color属相
+//     优缺点：效率高，不用新建Animal实例，节省内存；但是Dog.prototype 和 Animal.prototype 指向了同一个对象，对Dog.prototype的修改，都会影响Animal.prototype。
+//          Dog.prototype.type = 'dog'
+//          则Animal.prototype
+//         Object {type: "dog"}
+//         constructor: function Dog(name)
+//         eat: function()
+//         type: "dog"  
+
+// 3,借助空对象
+
+//     function Animal(){
+//         this.color = undefined;
+//         // this.type = 'animal';
+//         // this.eat = function(){
+//         //     console.log('eating..');
+//         // };
+//     }
+
+//     Animal.prototype = {
+//          type: 'animal',
+//          eat : function(){
+//             console.log('eating..');
+//          }
+//     };
+
+//     function Dog (name){
+//         this.name = name;
+//         this.kanm = function (){
+//             console.log(this.name + '在看门');
+//         };
+//     }
+
+//     function Cat (name){
+//         this.name = name;
+//         this.eatF = function (){
+//             console.log (this.name + 'eating fish...');
+//         };
+//     }
+
+//     function extend(child, parent){
+//         var F = function (){};
+//         F.prototype = parent.prototype;
+//         child.prototype = new F();
+//         child.prototype.construtor = child;
+//     }
+
+//     extend(Dog,Animal);
+
+//     var d1 = new Dog('doudou');
+//     var c1 = new Cat('mimi');
+
+//     优点：F是空对象，几乎不占内存，而且修改Dog对象的prototype，不会影响Animal的prototype对象。
+    
+
+// 4,拷贝继承，之前是利用prototype对象来实现继承,可以把父对象的所有属性和方法都拷贝到子对象
+
+    //     function Animal(){
+    //         this.color = undefined;
+    //         this.type = 'animal';
+    //         this.eat = function(){
+    //             console.log('eating..');
+    //         };
+    //     }
+
+    //     function extend( child , parent){
+    //         var p = parent.prototype;
+    //         var c = child.prototype;
+    //         for (var i in p) {//遍历p，将父属性给子属性
+    //             c[i] = p[i];
+    //         };
+    //     }
+
+    //     function Dog (name){
+    //         this.name = name;
+    //         this.kanm = function (){
+    //             console.log(this.name + '在看门');
+    //         };
+    //     } 
+        
+    //      function Cat (name){
+    //     this.name = name;
+    //     // this.eatF = function (){
+    //     //     console.log (this.name + 'eating fish...');
+    //     // };
+    // }
+
+    // Cat.prototype = {
+    //      eatF : function (){
+    //        console.log (this.name + 'eating fish...');
+    //     }
+    // }//若Dog 继承Cat的eatF属性就建prototype属性
+
+    //     extend(Dog,Cat)
+    //     var d2 = new Dog('doudou');
+    
+// 5,构造函数绑定, 使用call或apply方法，将父对象的构造函数绑定在子对象上。
+    
+//     function Animal(){
+//             this.color = undefined;
+//             this.type = 'animal';
+//             this.eat = function(){
+//                 console.log('eating..');
+//             };
+//         }
+
+//     function Dog (name){
+
+           
+//             this.name = name;
+//             this.kanm = function (){
+//                 console.log(this.name + '在看门');
+//             };
+
+//             Animal.apply(this, arguments); 
+//         } //arguments存放函数调用时参数的列表
+//         
+//     var d3 = new Dog('doudou');    
+
+//但每个属性是单独的，不在原型链上
+
+////////////////////////////////////////////////////
+//call(),apply()方法
+//
+// function puls( x, y ){
+//     return x + y;
+// }
+
+// function minus( x, y ){
+//     return y - x;
+// }
+
+// var n1 = puls.call(null,1,2);
+// var n2 = minus.apply(null,[3,7]);
+// // //call()apply()功能一样
+// // 区别：call()从第二个参数开始为参数列表
+// //       apply()从第二个参数开始为数组，值为参数列表
+
+// console.log('n1:' + n1);
+// console.log('n2:' + n2);
+
+//实现继承
+
+// function Fun1(){
+//     this.name = 'abc';
+//     this.getName = function(){
+//         return 'the name is: '+this.name;
+//     }
+// }
+
+// function Fun2(){
+//     this.name = 'def';
+// }
+
+// var f1 = new Fun1();
+//     console.log(f1);
+//     console.log(f1.getName());
+
+// var f2 = new Fun2();
+
+// var name = f1.getName.call(f2);
+// console.log(name)
+
+
+//例题
+
+/*var fullname = 'May';
+var obj = {
+    fullname: 'colin',
+    prop: {
+        fullname:'rose',
+        getFullname:function (){
+            return this.fullname;
+        }
+    }
+};
+
+console.log(obj.prop.getFullname());//rose
+var test = obj.prop.getFullname;
+    console.log(test());//May 
+var r = test.call(obj.prop);
+    console.log(r) //rose       */             
+
+//var test = obj.prop.getFullname.call(obj.prop);//rose
+//var test = obj.prop.getFullname;
+   //test.call(obj.prop);不对
+//console.log(test.call(obj.prop));//rose
+
+/////////////////构造函数继承/////////////
+/////////////非构造函数继承//////////////////
+
+//一object方法
+
+    var Animal = {
+         type: 'animal',
+         eat : function(){
+            console.log('eating..');
+         }
+    }
+
+    // function object(o) {
+    //     function F(){}; //空构造函数占内存小
+    //     F.prototype = o;// 将o的属性和方法复制到F的原型链上
+    //     return new F();
+    // }
+
+    // var Dog1 = object(Animal);//在父对象基础上生成子对象
+    // Dog1.name = 'dodo';     //子对象本身属性
+    // Dog1.color = 'white';
+
+
+//二 浅复制//新建对象，遍历父对象将其赋值给新建的对象
+//但是父对象是一个引用类型，子对象复制的是一个指针,若对子对象修改父对象也会受影响
+//
+   /* Animal.food = ['egg'];
+
+    function extendCopy( parent){
+        var child = {};
+        for ( var i in parent) {
+            child[i] = parent[i];
+        }
+        return child;
+    }
+*/
+   /* var Dog2 = extendCopy(Animal);
+    Dog2.name = 'dodo';
+    Dog2.food.push('apple');*/
+//修改子对象父对象内容也会被修改
+
+//方法三：深复制
+    //判断父对象的类型，把父对象属性，全部复制给子对象
+    //
+     Animal.food = ['egg'];
+
+        function deepCopy( Parent, child){
+            child = child||{};
+            for( var i in Parent){ //遍历父元素中每个属性
+                                               
+                if (typeof Parent[i] == 'object'){
+                  //判断父元素中每个属性类型
+                  //判断父元素中每个属性的引用类型并复制给子元素
+                  //
+                  //child[i] = (Parent[i].constructor = Array)? [] : {}
+                   child[i] = (Parent[i] instanceof Array)? [] : {};
+                   /* if (Parent[i] instanceof Array){ // 
+
+                        
+                    //若无这句则子元素中无数组food项
+                        child[i] = [];
+                    } else{
+                        chlid[i] = {};
+                    };*/ 
+
+                    //deepCopy(Parent[i],child[i]);//若无这句子元素foot中不会有egg这项
+                    //child[i] = Parent[i];//若返回这句父元素中food也会有子元素中的foot
+                } else {
+                    child[i] = Parent[i];
+                };
+            }
+            return child;
+        }
+
+        var Dog3 = deepCopy(Animal);
+        Dog3.name = 'dodo';
+        Dog3.food.push('apple','banana');
+
+        console.log(Dog3);
+        console.log(Animal);
+
+
+/////////////非构造函数继承//////////////////
+
+///////////////////阶乘///////////////////////
+
+    function jc (num) {
+        if ( num == 1){
+            return 1;
+        } else {
+            return num * jc( num - 1 );
+        }
+    }
+     var n = jc(3); //3的阶乘
+    console.log(n);
+
+
+function num(x,y){
+    if(x>1){                          // 5, 4, 3,  2,   
+        y = num(x-1)+2;//x=3,2+2+2,//x=5,2+(2)+(2)+(2)+2
+    } else {
+        y = 2;
+    }
+    return y;
+}
+    var a= 4, b = 2;
+                                        //x, y|x,y|x,y|              
+console.log(num(a,b));//若y值为2则得到偶数1-2,2-4,3-6,4-8,5-10
+                      // 若y值为1则得到奇数1-1,2-3,3-5,4-7,5-9                         
+
+
+
+
+///////////////////阶乘///////////////////////
+
+
+    </script>
+</body>
+</html>

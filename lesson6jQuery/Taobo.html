@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {
+          font-size: 14px;  
+        }
+
+        .wp {
+            width: 600px;
+            margin:20px auto;
+        }
+        .wp p {
+            margin:30px 0;
+        }
+        .wp p label {
+            padding:0 10px 0 0;
+        }
+
+        .wp p span {
+            border :1px solid #999;
+            padding :10px 8px;
+            color: #666;
+            cursor: pointer;
+        }
+
+        .wp p span.on {
+            background:url(img/on.png) right bottom no-repeat;
+            border:2px solid #f60;
+            padding:9px 7px;
+        }
+
+        .btn {
+            width: 330px;
+            /*height: 50px;*/
+            line-height: 50px;
+            text-align: center;
+            background-color: #f60;
+            font-size: 18px;
+            color:#fff;
+            margin-top: 30px;
+            cursor: pointer;
+        }
+
+    </style>
+    <script src = "js/jquery-3.1.1.min.js"></script>
+    <script>
+        $(function(){
+            $('.wp p>span').on('click',function(){
+                var $this = $(this),type,mem,price,
+                $Pspan = $('#Pspan');
+                    // $span1=$('.wp p>span.on[date-type]'),
+                    // $span2=$('.wp p>span.on[date-mem]');
+
+                $this.addClass('on').siblings('.on').removeClass('on');
+
+                    type = $('.wp p>span.on').attr('date-type');
+                     mem = $('.wp p>span.on[date-mem]').attr('date-mem');
+                    price = {
+                        11:10,
+                        12:20,
+                        13:30,
+                        21:20,
+                        22:30,
+                        23:40,
+                    };
+
+                    $Pspan.html('&yen; ' + price[type + mem] + '.00');//????
+
+                // console.log(type * mem);
+                console.log(type + mem);//????
+                
+            });
+        });
+        // var a=[0];
+        // if([0]){
+        //     console.log(a==true);
+        // } else {
+        //     console.log('wut');
+        // }
+    </script>
+</head>
+<body>
+    
+    <div class="wp">
+        <div class="">
+            <p>
+                <label>型号</label>
+                <span date-type="1" class="on">4.7英寸</span>
+                <span date-type="2">5.5英寸</span>
+            </p>
+             <p>
+                <label>颜色</label>
+                <span class = "on" >银色</span>
+                <span>金色</span>
+                <span>深空灰</span>
+            </p> 
+            <p>
+                <label>内存</label>
+                <span date-mem="1" class = "on">16G</span>
+                <span date-mem="2">64G</span>
+                <span date-mem="3">128G</span>
+            </p> 
+            <p>
+                <label>版本</label>
+                <span class = "on" >公开版</span>
+                <span>移动赠费版</span>
+                <span>联通合约机</span>
+            </p>
+        </div>
+        <hr>
+        <div class="">
+            <span>价格</span>
+            <span id ="Pspan">&yen; 10.00</span>
+        </div>
+        <div class ="btn">立即购买</div> 
+    </div>
+
+    
+    <!-- <script src = "js/jquery-3.1.1.min.js"></script>
+    <script>
+    </script> -->
+</body>
+</html>

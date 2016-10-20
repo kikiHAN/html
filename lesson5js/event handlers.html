@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>tab 事件</title>
+	<style>
+		.tab-wp {
+				width: 600px;
+				background-color: #ddd;
+			}
+			.tab-wp>.tab-header {
+				background-color: red;
+			}
+			.tab-header>a {
+				float: left;
+				text-align: center;
+				line-height: 45px;
+				color: #000;
+				padding:0px 20px;
+				text-decoration: none;
+			}
+			.tab-header> a.on {
+				background-color: #752112;
+				color: #fff;
+			}
+			
+			.tab-wp >.tab-header:after {
+				content: '';
+				display: block;
+				clear: both;
+			}
+			.tab-body >div {
+				height: 200px;
+				display: none;
+			}
+			.tab-body> div.on {
+				display: block;
+			}
+	</style>
+
+</head>
+<body>
+
+	<div class="tab-wp">
+			<div id="tabHeader" class="tab-header">
+				<a class="on" href="javascript:;">新闻</a>
+				<a href="javascript:;">历史</a>
+				<a href="javascript:;">政治</a>
+				<a href="javascript:;">军事</a>
+			</div>
+
+			<div id="tBody" class="tab-body">
+				<div class="on">新闻1</div>
+				<div>历史1</div>
+				<div>政治1</div>
+				<div>军事1</div>
+			</div>
+		</div>
+
+		<hr>
+
+
+	<button id="btn">按钮</button>
+	<button onclick="alert('点击')">按钮</button>
+
+	<hr>
+
+	<table border='1' id="tab">
+		<tr>
+			<td>itme1</td>
+			<td>itme2</td>
+			<td>itme3</td>
+			<td>itme4</td>
+			<td>itme5</td>
+			<td>itme6</td>
+		</tr>
+		<tr>
+			<td>itme1</td>
+			<td>itme2</td>
+			<td>itme3</td>
+			<td>itme4</td>
+			<td>itme5</td>
+			<td>itme6</td>
+		</tr>
+		<tr>
+			<td>itme1</td>
+			<td>itme2</td>
+			<td>itme3</td>
+			<td>itme4</td>
+			<td>itme5</td>
+			<td>itme6</td>
+		</tr>
+		<tr>
+			<td>itme1</td>
+			<td>itme2</td>
+			<td>itme3</td>
+			<td>itme4</td>
+			<td>itme5</td>
+			<td>itme6</td>
+		</tr>
+		<tr>
+			<td>itme1</td>
+			<td>itme2</td>
+			<td>itme3</td>
+			<td>itme4</td>
+			<td>itme5</td>
+			<td>itme6</td>
+		</tr>
+	</table>
+
+
+	<script>
+
+//		 function retab(){
+//			var tabHeader=document.getElementById('tabHeader');
+//			var tabA = tabHeader.getElementsByTagName('a');
+//			var tBody=document.getElementById('tBody');
+//			var tabdiv=tBody.getElementsByTagName('div');
+//			var len=tabA.length,i;
+//
+//			if (len!=tabdiv.length){
+//				alert('元素个数不相等');
+//				return;
+//			}
+//
+//
+//			for(i=0;i<len;i++){
+//				tabA[i].setAttribute("index",i);
+//
+//				tabA[i].onclick=function(){
+//					var curIndex=this.getAttribute('index');
+//
+//					for(var j=0; j<len;j++){
+//						tabA[j].className='';
+//						tabdiv[j].className='';
+//						//tabdiv[j].style.display="none";
+//					}
+//
+//					this.className="on";
+//					tabdiv[curIndex].className='on';
+//					//this.setAttribute('class', 'on');
+//				}
+//			}
+//		}
+//
+//		retab();
+
+
+		var tab=document.getElementById('tab');
+		tab.onclick=function(event){
+			console.log(event.target);
+		};
+
+	</script>
+	
+</body>
+</html>

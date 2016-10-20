@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: pink;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .wp {
+            width: 500px;
+            height: 500px;
+            margin: 20px auto;
+        }
+
+        .bg-wp {
+            width: 400px;
+            height: 400px;
+            background-image: url(img/cj-1.gif);
+            position: relative;
+        }
+
+        .inner {
+            width: 340px;
+            height: 340px;
+            background-image: url(img/cj-2.png);
+            position: absolute;
+            top: 30px;
+            left: 30px;
+        }
+
+        .con {
+            width: 186px;
+            height: 186px;
+            background-image: url(img/playbtn.png);
+            position: absolute;
+            top: 77px;
+            left: 77px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="wp">
+        <h3>您已拥有<span id="times"></span>次抽奖机会，点击立刻抽奖！~</h3>
+        <div class="bg-wp">
+            <div class="inner">
+                <a class="con"></a>
+            </div>
+        </div>
+    </div>
+
+
+    <script src = "js/jquery-3.1.1.min.js"></script>
+    <script src = "js/jquery.rotate.min.js"></script>
+    <script>
+    !function( window, document, $, undefined){
+
+        $('.con').on('click',function(){
+            var $this = $(this);
+                $this.rotate({
+                    // angle:180,
+                    duration: 4000,
+                    animateTo: 240,
+                    center:['50%','50%']
+
+                })
+        })
+
+
+    }(window,document, jQuery);
+
+    </script>
+</body>
+</html>

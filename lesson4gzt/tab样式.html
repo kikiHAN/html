@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<meta charset="UTF-8">
+	<title>tab样式</title>
+	<link rel="stylesheet" href="css/css1.css">
+	<style>
+	* {
+			margin: 0px;
+			padding :0px;
+		}
+/* 
+	ul,li {
+			list-style: none;
+			position :relative;	
+		}
+		div:after {
+			content:"";
+			display :block;
+			clear :both;
+		}
+
+		ul:after {
+			content: "";
+			display: block;
+			clear :both;
+		}
+
+		a {
+			display: block;
+			text-decoration: none;
+			font-size: 12px;
+			color: #999;
+			padding :6px 12px;
+			给a padding 调整on时高为父元素高
+			或给li padding
+		}
+		div {
+			width:1200px;
+			border-bottom: 1px solid red;
+			margin :20px auto;
+			position :relative;
+
+		}
+
+		ul {
+			float :right;
+			border:1px solid #ededed;
+			border-top: 1px solid #999;
+			border-left: 1px solid #999;
+			border-right: 1px solid #999;
+			height: 25px; 比子元素小，让子元素遮盖div的颜色
+		}
+
+		li {
+			float :left;
+			background-color: #fff;
+			padding :6px 12px;
+			给li padding on时高度是父元素高度一半加一
+
+		}
+
+		li:after {   li右面的竖线
+			content: "";
+		    display: block;
+		    width: 1px;
+		    height: 12px;
+		    position: absolute;
+		    top: 7px;
+		    right: 0px;
+		    background-color: #ccc;
+		}
+
+		.last:after,li.on:after { 
+			on时after，最后竖线透明
+			background-color: transparent;
+			on时隐藏
+		}
+
+		li.on{
+
+			border-width:3px 1px 0px ;
+			border-style: solid;
+			border-color: blue;
+			height: 13px;
+			top :-1px; 遮盖上面露出
+		}
+
+
+		表格
+
+		table {
+			background-color: red;
+		}
+		
+		td {
+
+			background-color: #fff;
+		}
+		
+		div.table {
+			margin:-60px 0px 200px 220px;
+			border:none;
+		}
+
+		.tab,tr.ta,tr.ta>td  {
+			border:1px solid blue;
+		}
+		.tab {
+			border-collapse: collapse;
+
+		}
+ */			
+
+
+
+		html,body {
+			height: 100%;
+		}
+
+
+ 		.con {
+ 			min-height: 100%;
+ 		}
+
+		.top {
+			height: 80px;
+			background-color: #ccc;
+		}
+
+		.left {
+			float :left;
+			width: 200px;
+			height: 200px;
+			background-color: blue;
+		}
+
+		.right {
+			float :right;
+			width: 400px;
+			height: 200px;
+			background-color: #ddd;
+		}
+
+		.cen {
+			height: 300px;
+			margin: 0px 400px 0px 200px;
+			background-color: red;
+
+		}
+
+		/* .hp {
+			height: 40px;
+		} */
+
+		.bot{
+			height: 30px;
+			background-color: green;
+			margin-top:30px;
+
+		} 
+
+		
+	</style>
+</head>
+<body>
+	<div class="con">
+		<div class="top">top</div>
+		<div class="left">1</div>
+		<div class="right">3</div>
+		<div class="cen">2</div>
+		<!-- <div class="hp"></div> -->
+	</div>
+	<div class="bot"></div>
+
+
+
+
+
+	<!-- <div class="nav">
+		<ul class="">
+			<li class="on"><a href="">热门</a></li>
+			<li ><a href="">大家电</a></li>
+			<li ><a href="">生活电器</a></li>
+			<li><a href="">厨房电器</a></li>
+			<li><a href="">个护健康</a></li>
+			<li><a href="">应季电器</a></li>
+			<li><a href="">空净/净水</a></li>
+			<li><a href="">新奇特</a></li>
+			<li class="last"><a href="">高端电器</a></li>
+		</ul>
+	</div> -->
+
+		<!-- 第一个表格 -->
+
+	<!-- 	<table cellspacing="1">
+		<tr>
+			<td>123</td>
+			<td>123</td>
+			<td>123</td>
+		</tr>
+		<tr>
+			<td>123</td>
+			<td>123</td>
+			<td>123</td>
+		</tr>
+		<tr>
+			<td>123</td>
+			<td>123</td>
+			<td>123</td>
+		</tr>
+	</table>
+		
+		表格二
+	
+	<div class="table">
+		<table class="tab">
+			<tr class="ta">
+				<td>123</td>
+				<td>123</td>
+				<td>123</td>
+			</tr>
+			<tr  class="ta">
+				<td>123</td>
+				<td>123</td>
+				<td>123</td>
+			</tr>
+			<tr  class="ta">
+				<td>123</td>
+				<td>123</td>
+				<td>123</td>
+			</tr>
+	</table>
+	</div>
+	 -->
+
+
+
+	 <script>
+
+
+	 	for(var i=0,sum=0;i<=100;i++){
+	 		if(i%2==0){
+	 			sum+=i;
+	 		}
+
+	 	}
+	 	alert(sum);
+	 	/*console.log(sum);*/
+
+	 		/*console.log(sum);*/
+
+	 		/*var sum=0;
+	 		for(var i=0; i<=100; i++){
+	 			if(i%2==0){
+	 				sum+=i;
+	 			}
+	 		}
+	 		  console.log(sum)*/
+
+
+	 		  for(var i=1; i<=9; i++){
+	 		  	for(var j=1; j<=9; j++){
+	 		  		
+	 		  	}
+	 		  }
+
+
+
+	 </script>
+</body>
+</html>

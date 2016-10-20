@@ -1,0 +1,141 @@
+/* .center {
+
+	float:right;
+	
+	width:300px;
+	background-color:#b0e0e6;
+}
+ */
+.center {
+
+	position:absolute;
+	right: 0px;
+	width:300px;
+	background-color:#b0e0e6;
+}
+
+.test>span {
+	color: red;
+	font-size: 23px;
+}
+
+.test {
+	opacity: .5;
+}
+		/* padding做法 */
+/* .an {
+	background-color: red;
+	text-decoration :none;
+	font-size: 12px;
+	font-weight: bold;
+	color: #fff;
+	
+	border:1px solid #ccc;
+	border-radius: 5px;
+	padding: 8px 15px;
+} */
+
+.an:hover{
+	color: #999;
+	background-color: #eee;
+}
+.an {
+	background-color: red;
+	text-decoration :none;
+	font-size: 12px;
+	font-weight: bold;
+	color: #fff;
+	width: 85px;
+	height: 25px;
+	text-align: center;
+	line-height: 25px;
+	border:1px solid #ccc;
+	display: block;
+	border-radius: 5px;
+	position: absolute;
+	left:200px;
+
+
+}
+
+.btn {
+	background-color: red;
+	width: 100px;
+	height: 30px;
+	border: 1px solid blue;
+	border-radius:3px;
+	color: #fff;
+	font-size: 16px;
+	text-align: center;
+	line-height: 30px;
+	cursor: pointer;
+}
+
+.btn :hover {
+	background-color: blue;
+	color: yellow;
+	border: none;
+	border-radius:3px;
+}
+
+.float1 {
+	border-width :1px;
+	border-color: red;
+	border-style:outset;
+	background-color: blue;
+
+}
+/* .ta {
+	background-color: red;
+	
+	border: 1px solid  yellow;
+} */
+ table tr,td {
+	/* background-color: yellow; */
+	border: 1px solid blue;
+}
+table {
+	/* border: 1px solid blue; */
+	border-collapse: collapse;
+}
+
+.ah a:link,.ah a:visited {
+  border-style: solid;
+  border-width: 5px;
+  border-color: transparent;
+  background-color: red;
+ 
+  
+ }
+
+.ah a:hover {
+	border-color: gray;
+}
+/* ul {
+	background-color: red;
+	padding: 10px 0px;
+}
+li {
+	display: inline;
+}
+
+li a {
+
+	text-decoration: none;
+	padding: 10px;
+} */
+
+ul {
+	/* background-color:red; */
+	height: 50px;
+	list-style: none;
+}
+li a {
+
+	text-decoration: none;
+	float: left;
+	height: 50px;
+	line-height: 50px;
+	margin: 0px 20px;
+
+}

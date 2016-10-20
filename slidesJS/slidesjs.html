@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>slides</title>
+    <style>
+        * {
+            padding: 0;
+            margin:0;
+        }
+
+        ul,li {
+            list-style: none;
+        }
+
+        #slides {
+            position:relative;
+            display: none;
+            width: 600px;
+            margin: 20px auto;
+        }
+        
+        .slidesjs-container {
+            width: 600px;
+        }
+
+        .slidesjs-pagination .active {
+            color :red;
+            background-color: red;
+        } 
+
+        .slidesjs-previous.slidesjs-navigation ,.slidesjs-next.slidesjs-navigation {
+            width: 30px;
+            height: 30px;
+            position:absolute;
+            top:50%;
+            margin-top:-15px;
+            background-color: #412;
+            z-index: 999;
+            text-indent:-9999px;
+            opacity: 0.5;
+        }
+
+        .slidesjs-next.slidesjs-navigation {
+            right:0;
+        }
+    
+        .slidesjs-pagination {
+            position: absolute;
+            bottom:5px;
+            z-index: 999;
+            left:50%;
+            margin-left: -28px;
+        }
+
+        .slidesjs-pagination-item {
+            float:left;
+            margin: 0 3px;
+            /*text-indent: -9999px;*/
+        }
+
+         .slidesjs-pagination-item a {
+            background-color: #ddd;
+            display:block;
+            width: 10px;
+            height: 10px;
+            text-indent: -9999px;
+            border-radius: 50%;
+         }
+    
+    </style>
+    <script src ="js/jquery-1.11.3.min.js"></script>
+    <script src ="Slides-SlidesJS-3/source/jquery.slides.min.js"></script>
+    <script >
+        $(function(){
+            $('#slides').slidesjs({
+                play: {
+                  // active: true,
+                    effect: "fade" ,
+                    auto: true,
+                    interval: 2000,
+                    swap: true
+                },
+                navigation: {
+                    effect: "fade"
+                },
+                pagination: {
+                    effect: "fade"
+                },
+                effect: {
+                    fade: {
+                        speed: 400
+                    }
+                }
+            });
+        });
+
+        // $(document).ready(function(){
+        //      $('#slides').slidesjs('width','300px');
+        // })
+    </script>
+</head>
+<body>
+
+    <div id="slides">
+        <img src="Slides-SlidesJS-3/examples/basic-fade/img/example-slide-1.jpg" alt="">
+        <img src="Slides-SlidesJS-3/examples/basic-fade/img/example-slide-2.jpg" alt="">
+        <img src="Slides-SlidesJS-3/examples/basic-fade/img/example-slide-3.jpg" alt="">
+        <img src="Slides-SlidesJS-3/examples/basic-fade/img/example-slide-4.jpg" alt="">
+    </div>
+
+    <script>
+
+
+
+    </script>
+</body>
+</html>

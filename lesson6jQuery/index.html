@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+    <link rel="stylesheet" href="css/css.jquery.css">
+
+    <style>
+
+    .cont {
+        width: 50px;
+        height: 20px;
+        color : red;
+        display: none;
+        border :1px solid red;
+    }
+
+    .cont.show {
+        display: block;
+    }
+    ul,li {
+        list-style:none;
+    }
+    .nav-mune li{
+        float :left;
+        margin  :10px;
+       padding:10px 5px;
+        cursor :pointer;
+        border :1px solid red;
+    }
+
+    .nav-mune li.on{
+        background-color: red;
+    }
+
+    /*.nav-mune li:hover{
+        background-color: red;
+    }
+    */
+    ul#awesome {
+        color :red;
+    }
+    
+    ul.shopping-lis li.favorite span {
+        color:blue;
+    }
+    </style>
+</head>
+<body>
+    
+
+
+    
+    <span class="a" id="myspan" title= "bcd">span0</span>
+    <button onclick = "opento()"  id = "btn">按钮显示</button>
+
+    <!-- <div id="div"  class="herd">
+           显示
+       <span class="ac">显示</span>
+       </div> --><!-- 这样显示不对 -->
+
+       
+    <!-- <div class="herd" id="her">显示</div>
+    <div class="cont" id="con">内容</div>
+    <hr>
+    <span id="span">span2</span>
+
+    <p>p标签</p> -->
+
+   
+   <!--  <ul id = "navMune" class="nav-mune">
+        <li class= "on">itme1</li>
+        <li>itme2</li>
+        <li>itme3</li>
+        <li>itme4</li>
+        <li>itme5</li>
+    </ul> -->
+
+        
+      <!--   <select id="sel">
+            <option value="北京">北京</option>
+            <option value="天津">天津</option>
+            <option value="上海">上海</option>
+            <option value="杭州">杭州</option>
+        </select>
+        <input type="text" value= 'bhg'>
+        <button>get val</button> -->
+
+    <p></p>
+                <!-- li>span 继承样式blue -->
+    <ul class = "shopping-lis" id = "awesome">
+        <li>
+            <span>Milk</span>
+        </li>
+        <li class = "favorite">
+            <span class="heightli">Sausage</span>
+        </li>
+    </ul>
+
+    <select name="" id="">
+        <option value="">option1</option>
+        <option value="">option2</option>
+        <option value="">option3</option>
+    </select>
+    <select id="">
+        <option value="">option11</option>
+        <option value="">option22</option>
+        <option value="">option32</option>
+        <option value="">option34</option>
+    </select>
+
+    <table id="mytable">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+        </tr>
+    </table>
+
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <!-- // <script src="js/jquery-3.1.1.js"></script> -->
+    <script src="js/jQuery.js"></script>
+    <script>     
+///////////点击按钮打开新页面//
+    // $('button').on( 'click',function(){
+    //     window.open('http://www.baidu.com')
+    // })
+        var opento = function (){
+            window.open('http://www.baidu.com')
+        }
+////输出yyy-mm-dd hh：mm：ss/////
+
+    function timer(dat){
+        
+        var y = dat.getFullYear(),
+            M = dat.getMonth()+1,
+            D = dat.getDate(),
+            h = dat.getHours(),
+            m = dat.getMinutes(),
+            s = dat.getSeconds();
+
+            return y + '-' +Full0(M) + '-' + Full0(D)  + ' ' + Full0(h) + ':'+ Full0(m) + ':' + Full0(s);
+    }
+
+    function Full0(num){
+        return num>=10? num:'0'+num;
+    }
+    var date =timer(new Date());
+    console.log(date);
+
+    // var $sel = $('select option');
+     var $option = $('select option:selected');
+            console.log($option);
+
+/*var tab = document.getElementById('mytable'),
+    tr = tab.getElementsByTagName('tr'),
+    td = tr[1].getElementsByTagName('td');
+    td[1].innerHTML="55";
+    td[1].style.backgroundColor = "red";
+    console.log(td);*/
+        //2
+    var $i = $('td:eq(1)','tr:eq(1)');
+        $i.html(55).css('background','red');/**/
+        //3
+    /*var $tr = $('table tr');
+        $tr.eq(1).find('td').eq(1).html('55').css('background','red');*/
+        
+        //each()标签
+        //
+        $('*').css({border:'1px solid red'});
+    </script>
+
+</body>
+</html>

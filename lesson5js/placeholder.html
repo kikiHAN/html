@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>placeholder</title>
+		<style>
+        
+        input[type=text] {
+            position: relative;
+            height: 20px;
+            line-height: 20px;
+            font-size: 12px;
+            border: 1px solid #555;
+            border-radius: 3px;
+            z-index: 3;
+            background-color: transparent;
+        }
+        .spl-wp {
+            position: relative;
+        }
+        .spl-wp .spl {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            color: #a9a9a9;
+            font-size: 12px;
+            z-index: 1;
+        }
+    </style>
+	</head>
+	<body>
+		<div class="">
+			<span></span>
+		</div>
+		<fieldset>
+			<legend>文本</legend>
+		</fieldset>
+		<hr>
+		<input type="text" placeholder="输入文本">
+		<hr>
+		<input type="text">
+		<br>
+		<input type="text" placeholder="输入文本">
+		<hr>
+		<input type="text" placeholder="输入文本">
+
+		<script>
+
+			function PHolder() {
+
+				var inpt= document.createElement('input');
+
+				if('placeholder' in inpt){
+					return;
+				}
+
+				dofix()
+
+			}
+
+				//console.log(inpt);
+				
+
+			function dofix() {
+				var inpts = document.getElementsByTagName('input'),
+				i,len=inpts.length;
+				for(i=0; i<len; i++){
+					if(inpts[i].type=='text' && inpts[i].placeholder){
+
+						inpts[i].outerHTML = '<span class="spl-wp">' + inpts[i].outerHTML + '<span class="spl">' + inpts[i].placeholder + '</span></span>';
+
+						inpts[i].onkeyup = onlisKup;
+
+						console.log(inpts([i].placeholder))
+					}
+					//console.log(inpts[i].placeholder);
+				}
+
+				function onlisKup(){
+					var vale = this.value,
+						plS = this.parentNode.getElementsByTagName('span')[0];
+
+					if (vale == ''){
+
+						plS.style.display = 'inline-block';
+					} else {
+						plS.style.display = 'none';
+					}
+				}
+
+			}
+				PHolder();
+
+		</script>
+	</body>
+	</html>	

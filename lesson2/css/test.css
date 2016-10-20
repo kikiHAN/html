@@ -1,0 +1,40 @@
+/* #a{
+	color:red;
+	background-color:blue;
+}
+
+
+div{
+	font-size:20px;
+	color:blue;
+}
+ */
+ .test-red{
+    color:yellow;
+ 	background-image:url(../img/baidu_jgylogo3.gif);
+ 	background-color:red;
+ 	text-align:center;
+ 	font-family:'黑体';
+
+ }
+
+a {
+	text-decoration:none;
+}
+
+span:hover{
+	color:red;
+	text-decoration: underline;
+}
+
+span{
+	background-color:blue;
+	color:#fff;
+	padding:20px;
+	border-radius: 10px
+
+}
+
+ul{
+	list-style-type:circle;
+}

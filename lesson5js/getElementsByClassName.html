@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>getElementsByClassName</title>
+</head>
+<body>
+	<div class="test">div1..</div>
+	<br>                       
+	<span class="test test2">span1.....</span>
+	<p class="tes">p...</p>
+	<div class="">div2
+		<div class="test">div3...</div>
+		<span class="test2">span2...</span>
+		<div class="test test2">div4....</div>
+	</div>
+
+
+	<script>
+		var claN = getEleClaN('test',document.body);
+		//var claN = document.getElementsByClassName('test');
+		//var tests = getElementsByCls('test',document.body);
+		//console.log(claN);
+			for(var i=0; i<claN.length; i++){
+			claN[i].style.backgroundColor = 'pink';
+
+			}
+			function getEleClaN(clsName,cont){
+				var elementsAr = [],
+				elems,
+				Clis;
+
+				if (document.getElementsByClassName){
+					return document.getElementsByClassName(clsName);
+				} else {
+
+					cont = cont || document;
+
+					elems = cont.getElementsByTagName('*');
+
+						for(var i = 0; i <elems.length; i++){
+
+							Clis = elems[i].className;
+
+							console.log(Clis);
+
+							if (!Clis){
+								continue;
+							}
+
+							if(isInCli(clsName,Clis)){
+
+								elementsAr.push(elems[i]);
+							}
+
+						};
+							return elementsAr;
+								
+						}	
+
+				};
+
+						function isInCli(Clis,allClis){
+							var arr = allClis.split(' ');
+								console.log(arr);
+								for(var i = 0; i <arr.length; i++){
+									if (arr[i] == Clis){
+										return true;
+
+									}
+
+								}
+
+								return false;
+			}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,345 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>accordion/slider</title>
+    <link rel="stylesheet" href="css/css.jquery.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,li {
+            list-style :none;
+        }
+
+        body {
+            background-color: red;
+        }
+
+        /*/////////////////手风琴//////////////////////////*/
+            /*1*/
+        /* .accordion {
+            width: 200px;
+            margin:20px auto;
+            border:1px solid #ccc;
+            background-color: #444;
+        }
+        
+        .her {
+            font-size :30px;
+            background-color: #fff;
+            text-align: center;
+            line-height: 40px;
+            margin-bottom:1px;
+            cursor :pointer;
+        }
+        
+        .cont {
+            cursor :pointer;
+            display:none;
+        }
+        
+        .cont li {
+             text-align: center;
+            line-height: 20px;
+            color :#fff;
+            border-bottom:1px solid #666;
+        }
+        
+        .cont li:hover {
+            background-color: red;
+        
+        } */
+
+        /*2accordion*/
+         
+        .accor {
+            width: 300px;
+            margin:30px auto;
+            text-indent :30px;
+            background-color: #777;
+            border-radius: 5px;
+        }
+        
+        .tit {
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #ccc;
+        }
+        
+        .accor p {
+            border-radius: 5px; /*设圆角有问题*/
+            line-height: 50px;
+            font-size: 30px;
+            margin-bottom:1px;
+            background-color: #ccc;
+        }
+        
+        .tit ul {
+            display :none;
+            background-color: #f40;
+        }
+        
+        .tit li {
+            line-height: 30px;
+        }
+        
+        .tit li:hover {
+            background-color: yellow;
+        }
+        
+        .red {
+            color:red;
+            background-color: yellow
+        }
+         
+        
+        /*////////////////图片轮播////////////////////////////////////////*/
+
+      /*   .img-slider {
+          width: 500px;
+          height: 200px;
+          background-color: #fff;
+          margin: 30px auto;
+          overflow: hidden;
+          position: relative;
+      }
+      
+      .img-slider li {
+          width: 500px;
+          height: 200px;
+      }
+      
+      .img-slider a {
+          display: none;
+          width: 40px;
+          height: 20px;
+          text-align: center;
+          background-color: #555;
+          position:absolute;
+          left: 0;
+          top:50%;
+          margin-top: -10px;
+          opacity: 0.5;IE8不支持
+          filter:alpha(opacity=50);
+      }
+      
+      a.next {
+          left:auto;
+          right: 0;
+      } */ 
+
+
+
+
+            
+    </style>
+
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script>
+
+
+    ///////////////////手风琴1///////////////////////////////////
+            ///accordion1
+          /* $(document).ready(function(){
+                $('.tit>p').on('click',function(){
+                    var $this = $(this);
+                    $this
+                         .addClass('red')
+                         .siblings('ul').slideToggle()
+                         .end()
+                         .parent('div').siblings()
+                         .find('ul').slideUp()
+                         .siblings('p').removeClass('red');
+                    //console.log($this)
+                })
+            }) */    
+        ///////////////////手风琴2//////////////////////////////////
+            //2
+            /* $(document).ready(function(){
+                $('.tit').on('click',function(){  
+                //若设div.tit点击事件，li点击时收回了
+                    var $this = $(this);
+                    $this
+                        .find('p').addClass('red')
+                        .end()
+                        .find('ul').slideToggle()
+                        .end()
+                        .siblings()
+                        .find('ul').slideUp()
+                        .end()
+                        .find('p').removeClass('red');
+                   // console.log($this)
+                })
+            }) */ 
+            /////菜单收起时p的颜色怎么变回去
+            // 
+            // ///////////////////////////////////////
+    
+/////////图片轮播/////////////////////////////
+
+     /*  $(document).ready(function() {
+             $('.img-slider').on('mouseover',function(){
+                 $('.img-slider > a').show();
+             }).on('mouseout',function(){
+                $('.img-slider>a').hide();
+             })
+            $('.img-slider > a').on('click',function(){
+                var $this = $(this),
+                    $ul = $('.img-slider ul');
+                    //console.log($ul)
+                if ( $this.hasClass('prev')){
+                    $ul.append($ul.find('li:first'));
+                } else {
+                    $ul.prepend($ul.find('li:last'));
+                }
+            })
+        }) */
+
+///////////////////////////////////////////////////////
+
+    </script>
+</head>
+<body>
+
+<!-- //////////////////手风琴////////////////////////////// -->
+
+<!-- 1 -->
+   <!--  <div class="accordion">
+            <div class="itme">
+                <div class="her">北京</div>
+                <ul class="cont">
+                    <li>朝阳</li>
+                    <li>昌平</li>
+                    <li>海淀</li>
+                </ul>
+            </div>
+
+             <div class="itme">
+                <div class="her">河北</div>
+                <ul class="cont">
+                    <li>衡水</li>
+                    <li>承德</li>
+                    <li>保定</li>
+                </ul>
+            </div>
+
+             <div class="itme">
+                <div class="her">山东</div>
+                <ul class="cont">
+                    <li>青海</li>
+                    <li>济南</li>
+                    <li>德州</li>
+                </ul>
+            </div>
+    </div>
+ -->
+
+ <!-- 2 -->
+
+  <!--   <div class="accor">
+       <div class="tit">
+           <p>css</p>
+           <ul>
+               <li>课程11</li>
+               <li>课程2</li>
+               <li>课程3</li>
+               <li>课程4</li>
+               <li>课程5</li>
+           </ul>
+       </div>
+   
+        <div class="tit">
+           <p>html</p>
+           <ul>
+               <li>课程12</li>
+               <li>课程2</li>
+               <li>课程3</li>
+               <li>课程4</li>
+               <li>课程5</li>
+           </ul>
+       </div>
+   
+        <div class="tit">
+           <p>javascript</p>
+           <ul>
+               <li>课程13</li>
+               <li>课程2</li>
+               <li>课程3</li>
+               <li>课程4</li>
+               <li>课程5</li>
+           </ul>
+       </div>
+   
+        <div class="tit">
+           <p>jQuery</p>
+           <ul>
+               <li>课程14</li>
+               <li>课程2</li>
+               <li>课程3</li>
+               <li>课程4</li>
+               <li>课程5</li>
+           </ul>
+       </div>
+   </div> -->
+
+<!-- ///////////////图片轮播////////////////////////////////// -->
+
+
+    <div class="img-slider">
+        <ul>
+            <li>item1</li>
+            <li>item2</li>
+            <li>item3</li>
+            <li>item4</li>
+            <li>item5</li>
+        </ul>
+        <a href="javascript:;" class="prev">&lt;</a>
+        <a href="javascript:;" class="next">&gt;</a>
+
+    </div>
+
+    <!-- //////////////////////////////////////////////// -->
+
+<script src="js/jquery-1.11.3.min.js"></script>
+    <!-- // <script src="js/jquery-3.1.1.js"></script> -->
+    <!-- //<script src="js/jQuery.js"></script> -->
+    <script>
+
+
+
+            //1
+    // function accordion(){
+    //     var $acc = $('.accordion'),
+    //         $her = $('.her'),
+    //         $itme = $('.itme');
+
+    //     $her.on('click',function(){
+    //         var $this = $(this),
+    //             //var $ul = $this.siblings(); //得到兄弟元素
+    //             // console.log($ul);
+                
+    //            // console.log( $this.parent().find('ul')); //得到兄弟元素
+            
+    //      $ul = $this.parent().find('ul');
+    //      // $ul.show();//显示隐藏效果
+    //      $ul.toggle();  //若显示就隐藏，隐藏就显示
+    //         //hide()隐藏显示效果
+
+       
+    //     $this.parent().siblings().find('ul').hide();
+
+
+    //     })
+    // }
+
+    // accordion();
+
+
+    </script>
+    
+</body>
+</html>

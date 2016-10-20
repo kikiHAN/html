@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>DOM</title>
+	<link rel="stylesheet" href="css/index.css">
+	<style>
+
+	.blu{
+		color:blue;
+		font-size:50px;
+		
+	}
+	#mySpan {
+		color: red;
+		
+		background-color:pink;
+	}
+	 
+
+	</style>
+</head>
+<body>
+	
+	<!-- <input type="button" value="按钮"  onclick="alert('hello!')">
+	<button onclick="alert('hello!')">按钮2</button>
+	 -->
+	<!-- <p id="deom">测试</p> -->
+	<!-- <button id="deom">按钮3</button> -->
+   <!--  <img id="light" src="img/eg_bulboff.gif" alt="">
+   	<button id="swich">开灯</button> -->
+
+
+   	<!-- <p id="deom">10以内奇数相乘积</p> -->
+
+
+   	<!-- <button id="btn">按钮</button> -->
+
+	<!-- 	<p id="fon"></p>
+	<button id="btn" onclick="car('英菲尼迪','黑色')">name</button>
+	<button id="btn" onclick="car('奔驰','黑色')">name</button>
+	<button id="btn" onclick="car('宝马','黑色')">name</button> -->
+<!-- ///////////////////////////////////////////////// -->
+	
+		<!-- DOM练习部分 -->
+		<!-- <div id="myDiv" class="blu">div
+			<span id="mspan">span0</span>
+		</div>
+		<h1 class="test">ppp</h1>
+		<div class="myDiv2">div2</div>
+		<span id="mySpan">span1</span>
+		<p class="test">ppp</p>
+		<span id="mySpan2"  class="myDiv">span2</span>
+		<input class="test" type="text" name = "test">
+		<input type="text" name = "pawd">
+		<button id = "btn">按钮</button>
+		<button  class= "btn">按钮2</button>
+			
+		
+		<ul id = "myUl" class= "mul">
+			<li id = "myli" class= "mli">item1</li>
+			<li>item2</li>
+			<li>item3</li>
+			<li>item4</li>
+			<li>item5</li>
+		</ul> -->
+
+
+		<button id="btn">显示</button>
+		<div id="div">文本</div>
+
+
+</body>
+
+	<script src= "js/jquery-3.1.1.js"></script>
+
+	<script src="js/index.js"></script>
+
+	<script>
+
+	// var btn = document.getElementById('btn'),
+	// 	div = document.getElementById('div');
+	// 	div.style.display = 'none';
+
+		
+	// 		btn.onclick = function(){
+	// 			div.style.display = 'block';
+	// 			btn.innerHTML = '隐藏';
+	// 		};
+
+
+
+
+
+
+
+	//替换元素
+
+	// var myul = document.getElementById('myDiv');
+	// var span = document.getElementById('mspan')
+	// var h1 = document.createElement('H1')
+	// var tex =document.createTextNode('h1标签')
+	//  h1.appendChild(tex);
+	//  myul.replaceChild(h1,span);
+
+
+
+	//插入元素
+		// //1)
+		// var myul = document.getElementById('myUl');
+		// var mli = document.getElementById('myli');
+		// var ml = document.createElement('m_li');
+		//  ml.innerHTML= '文本';
+		
+		// myul.insertBefore(ml,mli);
+
+		// //2)
+		//  var btn =  document. getElementById('btn');
+		//    btn.onclick = hello;
+		//   function hello(){
+		//  	var myul = document.getElementById('myDiv');
+		//  	var mli = document.getElementById('mspan');
+		//  	var myp = document.createElement('myP')
+		//  	myp.innerHTML = '文本'
+		//  	myul.insertBefore(myp, mli);
+	 //  	}
+
+
+
+	//删除元素
+		//1)
+		//var myul = document.getElementById('myUl');
+		//var mli = document.getElementById('myli');
+		//myul.removeChild(mli);
+		//2)
+		// var mli = document.getElementById('myli');
+		// mli.parentNode.removeChild(mli);
+
+		//3)
+		 // var btn =  document. getElementById('btn');
+		 //  btn.onclick = hello;
+		 //  function hello(){
+		 //  	var myul = document.getElementById('myUl');
+		 //  	var mli = document.getElementById('myli');
+		 //  	myul.removeChild(mli);
+		 //  }
+
+
+	//追加元素(加子节点)
+
+			//1)
+			//var btn =  document. getElementById('btn');
+			// btn.onclick = function(){
+			 	//添加元素
+				//var mydiv = document. getElementsByClassName('blu');
+				//var mspan = document.createElement('span');
+			// 	//var text = document.createTextNode('文本');
+			// 	//mspan.appendChild(text);
+				//mspan.innerHTML= '文本span';
+			 	//mydiv[0].appendChild(mspan);
+
+			 	//添加10个
+				// for (i= 0; i <10; i++){
+				// 	var mydiv = document. getElementsByClassName('blu');
+				// 	var mspan = document.createElement('div'+i);
+				// 	mydiv[0].appendChild(mspan);
+				// 	mspan.innerHTML= '文本div';
+				//  	mydiv[0].appendChild(mspan);
+				// }
+
+			 //}
+
+			//2)
+		//  var mydiv = document.getElementsByClassName('blu');
+		//     // var mydiv = document.getElementById('myDiv');
+		// var mdiv = document.createElement('div');
+		// var texr = document.createTextNode('新span元素');
+		//  mdiv.appendChild(texr);
+		//  mydiv[0].appendChild(mdiv);
+		//     // mydiv.appendChild(mdiv);
+
+
+
+
+	//对事件做出反应
+
+		// var myspan = document.getElementById('mySpan');
+		// myspan.onclick = function(){
+		// 	myspan.style.color = 'red';
+		// }
+
+			//第一种用 对象方法的方式
+		// var btn = document.getElementById('btn');
+		//  btn.onclick = function(){
+		//  	var mdiv = document.getElementById('myDiv');
+		//  	 mdiv.style.color = 'red';
+		//  	 mdiv.style.fontSize = '20px';
+		//  }
+
+		//第二种
+
+			// var btn = document.getElementsByClassName('btn');
+			// 	btn[0].onclick =hello ;
+			// 	function hello(){
+			// 		var mdiv = document.getElementById('myDiv');
+			//          mdiv.style.color = 'red';
+		 //             mdiv.style.fontSize = '20px';
+			// 	}
+
+
+
+	// 操作html元素
+
+			// //document.write("<p>myp</p>");		
+		// //innerHTML,innerText改变内容
+			// var myDiv = document.getElementById('myDiv');
+			// myDiv.innerHTML = ('<h1>b</h1>');
+			//通过索引找
+				// var myDiv = document.getElementsByClassName('myDiv');
+				// myDiv[1].innerHTML = ('<h1>b</h1>');
+
+
+	// 改变HTML属性
+
+			// myDiv.title = '标题';
+		 	//var myspan = document.getElementById('mySpan');
+			// myspan.innerText = ('<h1>b</h1>');
+			  //var mydiv  = document.getElementsByClassName('blu');//加名不可用
+			 	//mydiv[0].style.backgroundColor  = '#ccc';
+			 	//myspan.className += 'blu';
+
+			//console.log(mydiv);
+
+
+
+	//操作Css
+
+			// var mydiv = document.getElementsByClassName('myDiv');
+			// mydiv[0].style.color = 'red';
+			// mydiv[2].style.color = 'red';
+			// mydiv[1].style.backgroundColor = 'blue';
+
+
+
+	//查找HTML元素
+	       //通过id方法找()
+		       /*var myDiv = document.getElementById('mySpan');// 得到dom对象
+			    console.log(myDiv);*/
+
+			//通过标签名myspan类数组名
+				/*var myspan = document.getElementsByTagName('span');//类数组
+				//console.log(myspan);
+				console.log(myspan[1]);*/
+
+				// for (i>0; i<myspan.length;i++){
+				// 	span[i].innerText = 'span标签'；
+
+				// }///遍历span
+
+			//通过name属性找到
+				/*var test = document.getElementsByName('test');
+				console.log(test);*/
+
+			//通过类名class属性
+				// var mdiv = document.getElementsByClassName('myDiv');
+				   // console.log(mdiv);
+				// console.log(mdiv[0]);
+	 
+
+
+		/*document.getElementById("deom").innerHTML='10以内奇数相乘积'+j;*/
+		/*document.getElementById("btn").onclick=function(){
+			document.getElementById("deom").innerHTML=j;
+		};*/
+
+
+		/*var x =1, y = 8, z = x + y;
+
+		alert(z);*/
+
+		/*document.getElementById("swich").onclick=function(){
+			document.getElementById('light').src="img/eg_bulbon.gif";
+			document.getElementById('swich').innerHtml='关灯';
+			document.getElementById('swich').className="red-bg";
+			//alert('关灯')
+		}*/
+
+
+
+	/*	for(i = 1 p = 0; i <=10; i+=2){
+    		for(j = 1; j>=i;){
+    		
+    	}
+    }	console.log()*/
+
+	</script>
+
+
+
+</html>

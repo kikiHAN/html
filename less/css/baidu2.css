@@ -1,0 +1,178 @@
+/**
+* 百度页面样式
+＊／
+
+／＊ css reset */
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+ul,li {
+
+	list-style: none ;
+}
+
+body{
+	
+	font: 12px arial;
+	overflow :hidden;
+}
+
+/*styles*/
+
+.top-menu {
+   /*width :461px;*/
+  /* height :50px;*/
+   /*background-color :red;*/
+   position :absolute;
+   top :20px;
+   right :-5px;
+   /*float:right;
+   margin :20px 15px 0 0;*/ 
+}
+
+.top-menu li {
+	float :left;
+	font-size :13px;
+	font-weight :bold;
+	margin-right :20px;
+	
+}
+
+.top-menu li  a {
+	color :#333;
+}
+
+.text-normal a {
+	font-weight :normal;
+
+}
+
+.top-menu li.more-btn a {
+	background-color :#38f;
+	color :#fff;
+	text-decoration :none ;
+    padding :4px;
+
+	/*display :block;
+	width :60px;
+	height :23px;*/
+	
+}
+
+.main {
+	width :645px;
+	height :150px;
+	margin :85px auto 0;
+} 
+
+.main img {
+	display :block;
+	margin :auto;
+}
+
+.search-wp {
+	/*width :500px;
+	height :22px;*/
+
+	border :1px solid #b6b6b6;
+	width :539px;
+	height :34px;
+	display:inline-block ;
+	
+}
+
+.search-wp input {
+	border :none;
+	width :500px;
+	height :22px;
+	margin-top: 6px;
+    margin-left: 8px;
+}
+
+.search-wp input {
+	outline:none;
+
+}
+
+.search-btn {
+	background-color:#317ef3;
+	border:none;
+    width:100px;
+    height:36px;
+    font-size:15px;
+    color:#fff;
+    position: relative;
+    left: -4px;
+    top: 1px;
+
+}
+.search-btn:hover{
+	background-color:#2868c8;
+}
+
+.search-main-wp{
+	margin-top:30px;
+	margin-bottom:245px;
+}
+
+.de-menu{
+	
+	margin-top:300px 
+}
+/* 
+.de-menu li a{
+	float:left;
+	font-size:15px;
+	color:#999;
+	font-weight:normal;
+	margin-right:50px;
+
+}
+
+.de-menu .text-normal li a{
+	float:left;
+	font-size:15px;
+	color:#999;
+	font-weight:normal;
+	margin-right:0px;
+}
+.text a{
+	text-decoration :none ;
+}
+ */
+
+.about{
+	width :320px;
+	margin: 0 auto; 
+
+}
+.about ul a {
+	color:#999;
+	font-size:11px;
+	font-weight:normal;
+	margin-right: 25px;
+	/* text-indent: 40px; */
+}
+.about ul {
+	text-indent: 30px;
+}
+
+.about2 {
+	color:#999;
+	width :320px;
+	margin: 5px auto;
+
+}
+.about2 a {
+	color:#999;
+	font-size:11px;
+}
+.about3{
+	color:#999;
+	width :320px;
+	margin: 5px auto;
+	text-indent: 50px;
+}
