@@ -49,7 +49,8 @@
 <body>
     
 
-
+    <img src="" alt="">
+    <img src="" alt="">
     
     <span class="a" id="myspan" title= "bcd">span0</span>
     <button onclick = "opento()"  id = "btn">按钮显示</button>
@@ -86,7 +87,7 @@
         <input type="text" value= 'bhg'>
         <button>get val</button> -->
 
-    <p></p>
+    <!-- <p></p> -->
                 <!-- li>span 继承样式blue -->
     <ul class = "shopping-lis" id = "awesome">
         <li>
@@ -127,10 +128,129 @@
         </tr>
     </table>
 
+    <!-- <p>Hello 
+       <a href="http://ejohn.org/">John</a>,
+        how are you doing?
+        </p>  -->   
+
+        <iframe src="http://baidu.com" width="300" height="100"></iframe>
+
+        <!-- <p>1223</p> -->
+       <!--  <b>Hello</b>
+       <p>, how are you?</p> -->
+       <!-- 、、、、、、 -->
+    <!-- <div data-test="this is test">12334455</div> -->
+    <div id="test">Click Here!</div>
+    <div id="feeds">Click Here!</div>
+    <!-- ////////////////////////////////////////// -->
+
+    
+
     <script src="js/jquery-1.11.3.min.js"></script>
     <!-- // <script src="js/jquery-3.1.1.js"></script> -->
     <script src="js/jQuery.js"></script>
-    <script>     
+    <script>
+
+    /*$("iframe").contents().find("body")
+        .append("I'm in an iframe!");//在框架内加*/
+
+   /* $("p").contents().not("[nodeType=1]").wrap("<b/>");//a用b包起来
+    $("p").contents().wrap("<b/>");//p中所有用b包起来*/
+
+   /*var s= $("b").clone().prependTo("p");
+   console.log(s);//b标签*/
+
+   /* $("p").on("click", function (event, message1, message2) {
+      console.log(message1 + ' ' + message2);
+    });
+    $("p").trigger("click", ["Hello","World!"]);*/
+
+     // $("#feeds").load("feeds.php", {limit: 25}, function(){
+     //   alert("The last 25 entries in the feed have been loaded");
+     // });
+
+
+   /* //判断是不是jq对象
+        var a = { what: "A regular JS object" },
+          b = $('body');
+             if ( a.jquery ) { // falsy, since it's undefined
+          console.log(' a is a jQuery object! ');
+          }    if ( b.jquery ) { // truthy, since it's a string
+          console.log(' b is a jQuery object! ');//b是
+      }
+    // alert( 'You are running jQuery version: ' + $.fn.jquery );//版本号1.11.3*/
+/////////$.param
+  /*      var myObject = {
+              a: {
+                one: 1, 
+                two: 2, 
+                three: 3
+              }, 
+              b: [1,2,3]
+            };
+            var recursiveEncoded = $.param(myObject);
+            var recursiveDecoded = decodeURIComponent($.param(myObject));
+
+            alert(recursiveEncoded);
+            alert(recursiveDecoded);
+            //a%5Bone%5D=1&a%5Btwo%5D=2&a%5Bthree%5D=3&b%5B%5D=1&b%5B%5D=2&b%5B%5D=3
+            //a[one]=1&a[two]=2&a[three]=3&b[]=1&b[]=2&b[]=3
+
+            var shallowEncoded = $.param(myObject, true);
+            var shallowDecoded = decodeURIComponent(shallowEncoded);
+
+            alert(shallowEncoded);
+            alert(shallowDecoded);
+            //a=%5Bobject+Object%5D&b=1&b=2&b=3
+            //a=[object+Object]&b=1&b=2&b=3*/
+
+    /*//把文本转化为对象
+     var test='{ colkey: "col", colsinfo: "NameList" }' 
+      var obj2=eval("("+test+")");
+      // alert(obj2.colkey);//col
+      // alert(obj2.colsinfo);//NameList
+      console.log(obj2);//对象
+      //把文本转化为数组
+      var test='["colkey", "col", "colsinfo","NameList" ]'      
+       var obj2=eval("("+test+")");  
+       // alert(obj2.length); //4
+       console.log(obj2); //数组*/
+
+      /////////////////
+   /* //$.isFunction(obj)
+        function stub() {};
+                             
+        var objs = [
+            function () {},
+            { x:15, y:20 },
+            null,
+            stub,
+            "function"
+          ];
+        jQuery.each(objs, function (i) {
+        var isFunc = jQuery.isFunction(objs[i]);
+       // alert( $("span:eq( " + i + ")").text(isFunc));
+                console.log(isFunc)//t,f,f,t,f
+      });*/
+
+
+        // console.log($("b").append( " + $.isArray([])" ))
+
+      /*  var obj = {
+          name: "John",
+          test: function() {
+            alert( this.name );
+            // $("#test").unbind("click", obj.test);
+          }
+        };
+        // $("#test").click( jQuery.proxy( obj, "test" ) )//john
+        $("#test").click( obj.test )//undefined*/
+       // var obj = jQuery.parseJSON('{"name":"John"}');
+            // console.log(( obj.name === "John" )); //
+
+
+       // console.log($("div").data("test")) 
+
 ///////////点击按钮打开新页面//
     // $('button').on( 'click',function(){
     //     window.open('http://www.baidu.com')
@@ -177,7 +297,7 @@
         
         //each()标签
         //
-        $('*').css({border:'1px solid red'});
+        // $('*').css({border:'1px solid red'});
     </script>
 
 </body>

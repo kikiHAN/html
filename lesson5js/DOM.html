@@ -66,17 +66,46 @@
 		</ul> -->
 
 
-		<button id="btn">显示</button>
-		<div id="div">文本</div>
+		<!-- <button id="btn">显示</button>
+		<div id="div">文本</div> -->
+	
+	<div id="mydiv">
+		<p id="myp">duanluo</p>
+		<input type="button" id="btn1" value="tian">
 
+	</div>
 
 </body>
 
-	<script src= "js/jquery-3.1.1.js"></script>
-
+	<script src= "js/jquery-3.1.1.min.js"></script>
 	<script src="js/index.js"></script>
-
 	<script>
+
+		var btn1 = document.getElementById('btn1');
+			
+			btn1.onclick = function(){
+				var myDiv = document.getElementById('mydiv'),
+		 			myP = document.getElementById('myp'),
+					mySpan = document.createElement('span');
+					// txt = document.createTextNode('我是一个span'+i);
+				// myDiv.appendChild(mySpan);
+				// myDiv.insertBefore(mySpan,myP);
+				// mySpan.setAttribute('name','mySpan')
+				for (var i=0; i<myDiv.children.length;i++){
+					mySpan.innerHTML='我是一个span'+i;
+				};
+				// mySpan.appendChild(txt);
+				myDiv.insertBefore(mySpan,myP);
+				myDiv.insertBefore(mySpan,myDiv.children[0]);
+
+
+				/*for(var i=1;i<mySpan.length;i++){
+					// mySpan.getAttribute(name[i]);
+					mySpan.setAttribute('name','mySpan'+i);
+				}*/
+			}
+
+
 
 	// var btn = document.getElementById('btn'),
 	// 	div = document.getElementById('div');

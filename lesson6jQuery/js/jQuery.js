@@ -133,7 +133,7 @@
 
 
 
-// addClass()//给选种元素添加一个类属性
+// addClass()//给选种元素添加一个类属性 
 // $('span').addClass('red');
 
 // removeClass()//给选种元素删除样式，删class名为a的
@@ -166,7 +166,7 @@
    
 
  
-// size()
+// size()//用length
 
 // var $span = $('#span');
 // console.log($span.length);属性
@@ -196,5 +196,20 @@
 ///////////////////////////////////////////////////////
 
 
+//两个each用法
+//$.each()通用例遍方法，可用于例遍对象和数组
+// $.each( { name: "John", lang: "JS" }, function(i, n){
+//   alert( "Name: " + i + ", Value: " + n );
+// });
 
+// $.each( [0,1,2], function(i, n){
+//   alert( "Item #" + i + ": " + n );
+// });
+//each()以每一个匹配的元素作为上下文来执行一个函数
+//迭代
+//返回 'false' 将停止循环 (就像在普通的循环中使用 'break')。
+//返回 'true' 跳至下一个循环(就像在普通的循环中使用'continue')
 
+    $("img").each(function(i){
+        this.src = "test" + i + ".jpg";
+ });
